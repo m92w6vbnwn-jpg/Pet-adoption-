@@ -55,7 +55,7 @@ export default async function PetDetailPage({ params }: Props) {
             {pet.name}
           </h1>
           <p className="mt-2 text-lg text-ink-700">
-            {pet.breed} · {formatAge(pet.ageYears, pet.species)} ·{" "}
+            {pet.breed} · {formatAge(pet.ageYears)} ·{" "}
             {formatSize(pet.size)}
           </p>
           <p className="mt-1 text-sm text-ink-700/80">{pet.location}</p>

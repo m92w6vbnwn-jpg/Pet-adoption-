@@ -18,7 +18,7 @@ export function formatAgeGroup(ageGroup: AgeGroup): string {
   return labels[ageGroup];
 }
 
-export function formatAge(years: number, _species: Species): string {
+export function formatAge(years: number): string {
   if (years < 1) {
     const months = Math.max(1, Math.round(years * 12));
     return `${months} mo`;

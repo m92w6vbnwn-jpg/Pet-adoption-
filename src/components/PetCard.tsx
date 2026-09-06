@@ -30,7 +30,7 @@ export default function PetCard({ pet }: { pet: Pet }) {
           </span>
         </div>
         <p className="mt-1 text-sm text-ink-700">
-          {pet.breed} · {formatAge(pet.ageYears, pet.species)}
+          {pet.breed} · {formatAge(pet.ageYears)}
         </p>
         <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-ink-700/90">
           {pet.bio}
