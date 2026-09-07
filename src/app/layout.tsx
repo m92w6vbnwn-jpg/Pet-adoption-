@@ -18,11 +18,11 @@ const sans = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: {
-    default: "Øf — Pet adoption with heart",
-    template: "%s · Øf",
+    default: "Puppies for Adoption — Find your forever friend",
+    template: "%s · Puppies for Adoption",
   },
   description:
-    "Øf helps people adopt pets. Browse dogs, cats, rabbits, and birds looking for forever homes.",
+    "Puppies for Adoption helps people find forever friends. Browse dogs, cats, rabbits, and birds looking for loving homes.",
 };
 
 export default function RootLayout({

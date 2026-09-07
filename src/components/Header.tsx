@@ -23,9 +23,10 @@ export default function Header() {
         <Link
           href="/"
           className="font-display text-2xl font-semibold tracking-tight text-ink-900"
-          aria-label="Øf home"
+          aria-label="Puppies for Adoption home"
         >
-          Øf
+          <span className="md:hidden">Puppies</span>
+          <span className="hidden md:inline">Puppies for Adoption</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">

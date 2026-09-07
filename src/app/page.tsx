@@ -17,8 +17,8 @@ export default function HomePage() {
               Pet adoption, made warm
             </p>
             <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-ink-900 sm:text-5xl lg:text-6xl">
-              Find your next best friend with{" "}
-              <span className="text-clay-600">Øf</span>
+              Find your next best friend at{" "}
+              <span className="text-clay-600">Puppies for Adoption</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-700">
               Browse lovable dogs, cats, rabbits, and birds ready for a forever
@@ -88,7 +88,7 @@ export default function HomePage() {
         <div className="overflow-hidden rounded-3xl border border-cream-300 bg-gradient-to-br from-sage-500/15 via-cream-50 to-clay-400/10 p-6 sm:p-8 md:flex md:items-center md:justify-between md:gap-8">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase tracking-widest text-sage-700">
-              New on Øf
+              New here
             </p>
             <h2 className="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">
               Breed encyclopedia
@@ -168,8 +168,8 @@ export default function HomePage() {
           Ready to meet your match?
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-ink-700">
-          Start browsing adoptable pets near you — or learn how Øf guides every
-          adoption from first hello to forever home.
+          Start browsing adoptable pets near you — or learn how Puppies for Adoption
+          guides every adoption from first hello to forever home.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
@@ -182,7 +182,7 @@ export default function HomePage() {
             href="/about"
             className="rounded-full border border-ink-700/20 bg-white px-6 py-3 text-sm font-semibold text-ink-800 hover:bg-cream-100"
           >
-            About Øf
+            About us
           </Link>
         </div>
       </section>

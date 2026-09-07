@@ -147,7 +147,7 @@ export default async function BreedDetailPage({ params }: Props) {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="font-display text-2xl font-semibold text-ink-900">
-              Adoptable {breed.name}s on Øf
+              Adoptable {breed.name}s on Puppies for Adoption
             </h2>
             <p className="mt-1 text-sm text-ink-700">
               {matchingPets.length > 0

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="mt-auto border-t border-cream-300 bg-ink-900 text-cream-100">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl font-semibold text-white">Øf</p>
+          <p className="font-display text-2xl font-semibold text-white">Puppies for Adoption</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-300">
             Helping people and pets find each other — with care, warmth, and a
             forever home in mind.
@@ -33,7 +33,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/about" className="hover:text-white">
-                About Øf
+                About us
               </Link>
             </li>
             <li>
@@ -47,12 +47,12 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-cream-200">
             Get in touch
           </h2>
-          <p className="mt-3 text-sm text-cream-300">hello@of-pets.example</p>
+          <p className="mt-3 text-sm text-cream-300">hello@puppiesforadoption.example</p>
           <p className="mt-1 text-sm text-cream-300">California, United States</p>
         </div>
       </div>
       <div className="border-t border-ink-800 py-4 text-center text-xs text-cream-300/80">
-        © {new Date().getFullYear()} Øf. Made with care for animals everywhere.
+        © {new Date().getFullYear()} Puppies for Adoption. Made with care for animals everywhere.
       </div>
     </footer>
   );

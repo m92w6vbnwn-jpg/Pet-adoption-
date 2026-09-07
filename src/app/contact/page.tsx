@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with the Øf pet adoption team.",
+  description: "Get in touch with the Puppies for Adoption team.",
 };
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">
                 Email
               </dt>
-              <dd className="mt-1">hello@of-pets.example</dd>
+              <dd className="mt-1">hello@puppiesforadoption.example</dd>
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">

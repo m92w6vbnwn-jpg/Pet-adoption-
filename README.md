@@ -1,4 +1,4 @@
-# Øf Pet Adoption
+# Puppies for Adoption
 
 Warm pet-adoption website built with Next.js App Router, TypeScript, and Tailwind CSS.
 

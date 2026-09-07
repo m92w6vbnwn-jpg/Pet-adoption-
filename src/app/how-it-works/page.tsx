@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How adoption works",
-  description: "A simple guide to adopting a pet through Øf.",
+  description: "A simple guide to adopting a pet through Puppies for Adoption.",
 };
 
 const steps = [
@@ -36,7 +36,7 @@ export default function HowItWorksPage() {
         How adoption works
       </h1>
       <p className="mt-3 max-w-2xl text-lg text-ink-700">
-        Adopting with Øf is meant to feel clear and kind — not overwhelming.
+        Adopting with Puppies for Adoption is meant to feel clear and kind — not overwhelming.
         Here is the journey from first browse to forever home.
       </p>
 

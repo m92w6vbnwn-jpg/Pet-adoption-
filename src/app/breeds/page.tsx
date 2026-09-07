@@ -5,7 +5,7 @@ import { breedCounts, breeds } from "@/data/breeds";
 export const metadata: Metadata = {
   title: "Breed encyclopedia",
   description:
-    "Explore dog, cat, rabbit, and bird breeds — temperament, energy, coat, and care notes from Øf.",
+    "Explore dog, cat, rabbit, and bird breeds — temperament, energy, coat, and care notes from Puppies for Adoption.",
 };
 
 export default function BreedsPage() {

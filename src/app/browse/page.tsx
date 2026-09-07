@@ -5,7 +5,7 @@ import { pets } from "@/data/pets";
 
 export const metadata: Metadata = {
   title: "Browse pets",
-  description: "Search and filter adoptable dogs, cats, rabbits, and birds on Øf.",
+  description: "Search and filter adoptable dogs, cats, rabbits, and birds on Puppies for Adoption.",
 };
 
 export default function BrowsePage() {

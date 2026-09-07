@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Øf",
-  description: "Learn about Of — a warm home for pet adoption.",
+  title: "About Puppies for Adoption",
+  description: "Learn about Puppies for Adoption — a warm home for pet adoption.",
 };
 
 export default function AboutPage() {
@@ -13,11 +13,11 @@ export default function AboutPage() {
         Our story
       </p>
       <h1 className="mt-3 font-display text-4xl font-semibold text-ink-900">
-        About Øf
+        About Puppies for Adoption
       </h1>
       <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink-700">
         <p>
-          Øf was created with a simple belief: every pet deserves a soft place
+          Puppies for Adoption was created with a simple belief: every pet deserves a soft place
           to land, and every person deserves a clear, kind path to adoption.
         </p>
         <p>
@@ -27,7 +27,7 @@ export default function AboutPage() {
         </p>
         <p>
           This v1 site is a front-end experience with realistic sample pets. In
-          a future version, Øf will connect shelters, fosters, and families with
+          a future version, Puppies for Adoption will connect shelters, fosters, and families with
           live listings and guided support.
         </p>
         <p>

@@ -1,6 +1,6 @@
 import type { Breed } from "@/lib/types";
 
-/** Comprehensive static breed encyclopedia for Øf (dogs, cats, and a few small pets). */
+/** Comprehensive static breed encyclopedia for Puppies for Adoption (dogs, cats, and a few small pets). */
 export const breeds: Breed[] = [
   {
     slug: "labrador-retriever",
