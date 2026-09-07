@@ -17,12 +17,20 @@ const sans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://m92w6vbnwn-jpg.github.io/Pet-adoption-"),
   title: {
     default: "Puppies for Adoption — Find your forever friend",
     template: "%s · Puppies for Adoption",
   },
   description:
     "Puppies for Adoption helps people find forever friends. Browse dogs, cats, rabbits, and birds looking for loving homes.",
+  openGraph: {
+    title: "Puppies for Adoption — Find your forever friend",
+    description:
+      "Puppies for Adoption helps people find forever friends. Browse dogs, cats, rabbits, and birds looking for loving homes.",
+    type: "website",
+    siteName: "Puppies for Adoption",
+  },
 };
 
 export default function RootLayout({
