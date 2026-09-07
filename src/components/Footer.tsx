@@ -48,7 +48,7 @@ export default function Footer() {
             Get in touch
           </h2>
           <p className="mt-3 text-sm text-cream-300">hello@of-pets.example</p>
-          <p className="mt-1 text-sm text-cream-300">Douala, Cameroon</p>
+          <p className="mt-1 text-sm text-cream-300">California, United States</p>
         </div>
       </div>
       <div className="border-t border-ink-800 py-4 text-center text-xs text-cream-300/80">

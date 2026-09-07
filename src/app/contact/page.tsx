@@ -29,13 +29,13 @@ export default function ContactPage() {
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">
                 Location
               </dt>
-              <dd className="mt-1">Douala, Cameroon</dd>
+              <dd className="mt-1">California, United States</dd>
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">
                 Hours
               </dt>
-              <dd className="mt-1">Mon–Fri, 9:00–17:00 (WAT)</dd>
+              <dd className="mt-1">Mon–Fri, 9:00–17:00 (PT)</dd>
             </div>
           </dl>
         </div>
