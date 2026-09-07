@@ -21,9 +21,8 @@ export default function HomePage() {
               <span className="text-clay-600">Puppies for Adoption</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-700">
-              Browse lovable dogs, cats, rabbits, and birds ready for a forever
-              home. We match people and pets with care — one gentle step at a
-              time.
+              Browse lovable dogs and puppies ready for a forever home. We match
+              people and pets with care — one gentle step at a time.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -45,15 +44,15 @@ export default function HomePage() {
                   Pets
                 </dt>
                 <dd className="font-display text-2xl font-semibold text-ink-900">
-                  12+
+                  5+
                 </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wide text-ink-700/70">
-                  Species
+                  Breeds
                 </dt>
                 <dd className="font-display text-2xl font-semibold text-ink-900">
-                  4
+                  {breedCounts.dog}+
                 </dd>
               </div>
               <div>
@@ -69,7 +68,7 @@ export default function HomePage() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-cream-300 shadow-xl lg:max-w-none">
             <Image
               src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900&h=1100&fit=crop"
-              alt="Happy dog and cat together"
+              alt="Happy dog ready for adoption"
               fill
               priority
               className="object-cover"
@@ -94,9 +93,9 @@ export default function HomePage() {
               Breed encyclopedia
             </h2>
             <p className="mt-3 text-ink-700 leading-relaxed">
-              Explore {breedCounts.dog}+ dog breeds and {breedCounts.cat}+ cat
-              breeds — plus a handful of rabbit and bird profiles — with
-              temperament tags, energy levels, and practical care notes.
+              Explore {breedCounts.dog}+ dog breeds with temperament tags,
+              energy levels, and practical care notes — so you can find a
+              companion that fits your life.
             </p>
           </div>
           <Link
@@ -137,7 +136,7 @@ export default function HomePage() {
           {[
             {
               title: "Browse with care",
-              body: "Filter by species, age, and size to find a companion that fits your life.",
+              body: "Filter by age and size to find a dog that fits your life.",
             },
             {
               title: "Apply simply",

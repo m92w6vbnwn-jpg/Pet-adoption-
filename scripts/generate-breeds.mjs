@@ -33,11 +33,7 @@ function blurb(species, name, traits, size, energy, origin) {
   const traitStr = traits.slice(0, 3).join(", ").toLowerCase();
   const originBit = origin ? ` With roots in ${origin},` : "";
   const care =
-    species === "dog"
-      ? `Families who can match that energy and offer consistent training find a loyal partner.`
-      : species === "cat"
-        ? `Indoor enrichment and gentle routines help this breed shine at home.`
-        : `Thoughtful housing and a steady routine keep them content.`;
+    `Families who can match that energy and offer consistent training find a loyal partner.`;
   return `${name} is known for being ${traitStr}, with a ${sizePhrase} that ${energyPhrase}.${originBit} ${care}`.replace(
     /\s+/g,
     " "
@@ -59,15 +55,6 @@ function careNotes(species, coat, energy) {
       : energy === "low"
         ? " Short walks or gentle play sessions are often enough."
         : " Moderate daily activity plus enrichment works well.";
-  if (species === "cat") {
-    return `${coatNote} Vertical space, scratching posts, and interactive toys support wellbeing.${energy === "high" ? " Expect lively evening zoomies." : ""}`.trim();
-  }
-  if (species === "rabbit") {
-    return `Unlimited hay, supervised floor time, and a spacious enclosure are essentials. ${coatNote}`;
-  }
-  if (species === "bird") {
-    return `Social interaction, a roomy cage, and foraging toys matter as much as diet. Avoid drafts and toxic fumes.`;
-  }
   return `${coatNote}${energyNote} Positive training and early socialization pay off.`.trim();
 }
 
@@ -331,150 +318,7 @@ for (const row of dogRaw) {
   });
 }
 
-// --- CATS (60+) ---
-const catRaw = [
-  ["Domestic Shorthair", "medium", "short", ["Adaptable", "Affectionate", "Playful"], "moderate", ["kids", "apartments", "dogs"], undefined],
-  ["Domestic Longhair", "medium", "long", ["Gentle", "Affectionate", "Calm"], "low", ["apartments", "families"], undefined],
-  ["Tabby", "medium", "short", ["Curious", "Friendly", "Independent"], "moderate", ["apartments", "families"], undefined],
-  ["Calico", "medium", "short", ["Spunky", "Affectionate", "Independent"], "moderate", ["apartments"], undefined],
-  ["Tortoiseshell", "medium", "short", ["Spirited", "Loyal", "Playful"], "moderate", ["apartments"], undefined],
-  ["Siamese", "medium", "short", ["Vocal", "Social", "Intelligent"], "high", ["families", "apartments"], "Thailand"],
-  ["Siamese Mix", "medium", "short", ["Social", "Curious", "Affectionate"], "moderate", ["families"], undefined],
-  ["Persian", "medium", "long", ["Quiet", "Sweet", "Dignified"], "low", ["apartments", "calm homes"], "Iran"],
-  ["Maine Coon", "large", "long", ["Gentle", "Friendly", "Playful"], "moderate", ["kids", "dogs", "families"], "United States"],
-  ["Ragdoll", "large", "long", ["Docile", "Relaxed", "Affectionate"], "low", ["families", "kids", "apartments"], "United States"],
-  ["British Shorthair", "medium", "short", ["Calm", "Easygoing", "Affectionate"], "low", ["apartments", "families"], "United Kingdom"],
-  ["American Shorthair", "medium", "short", ["Even-tempered", "Playful", "Healthy"], "moderate", ["kids", "families"], "United States"],
-  ["Scottish Fold", "medium", "short", ["Sweet", "Adaptable", "Playful"], "low", ["apartments", "families"], "Scotland"],
-  ["Bengal", "medium", "short", ["Energetic", "Curious", "Athletic"], "high", ["active homes", "experienced homes"], "United States"],
-  ["Sphynx", "medium", "hairless", ["Outgoing", "Energetic", "Affectionate"], "high", ["families", "apartments"], "Canada"],
-  ["Abyssinian", "medium", "short", ["Active", "Loyal", "Playful"], "high", ["active homes"], "Ethiopia"],
-  ["Russian Blue", "medium", "short", ["Quiet", "Gentle", "Reserved"], "moderate", ["apartments", "calm homes"], "Russia"],
-  ["Oriental Shorthair", "medium", "short", ["Vocal", "Social", "Curious"], "high", ["families"], "United Kingdom"],
-  ["Devon Rex", "medium", "curly", ["Mischievous", "Social", "Playful"], "high", ["families", "apartments"], "England"],
-  ["Cornish Rex", "medium", "curly", ["Active", "Affectionate", "Curious"], "high", ["families"], "England"],
-  ["Birman", "large", "long", ["Gentle", "Social", "Quiet"], "low", ["families", "kids"], "Myanmar"],
-  ["Norwegian Forest Cat", "large", "long", ["Friendly", "Patient", "Independent"], "moderate", ["families", "kids"], "Norway"],
-  ["Siberian", "large", "long", ["Affectionate", "Playful", "Calm"], "moderate", ["families", "kids"], "Russia"],
-  ["Exotic Shorthair", "medium", "short", ["Quiet", "Loyal", "Playful"], "low", ["apartments", "families"], "United States"],
-  ["Burmese", "medium", "short", ["People-oriented", "Playful", "Curious"], "moderate", ["families"], "Myanmar"],
-  ["Tonkinese", "medium", "short", ["Social", "Curious", "Affectionate"], "high", ["families"], "Canada"],
-  ["Himalayan", "medium", "long", ["Gentle", "Quiet", "Sweet"], "low", ["apartments", "calm homes"], "United States"],
-  ["Manx", "medium", "short", ["Playful", "Social", "Intelligent"], "moderate", ["families"], "Isle of Man"],
-  ["American Curl", "medium", "medium", ["Curious", "People-oriented", "Adaptable"], "moderate", ["families"], "United States"],
-  ["Turkish Angora", "medium", "long", ["Intelligent", "Playful", "Graceful"], "high", ["families"], "Turkey"],
-  ["Turkish Van", "large", "semi-long", ["Energetic", "Intelligent", "Curious"], "high", ["active homes"], "Turkey"],
-  ["Bombay", "medium", "short", ["Affectionate", "Curious", "People-oriented"], "moderate", ["apartments", "families"], "United States"],
-  ["Chartreux", "medium", "short", ["Quiet", "Loyal", "Observant"], "low", ["apartments"], "France"],
-  ["Egyptian Mau", "medium", "short", ["Loyal", "Active", "Alert"], "high", ["active homes"], "Egypt"],
-  ["Savannah", "large", "short", ["Curious", "Athletic", "Loyal"], "high", ["experienced homes"], "United States"],
-  ["Ocicat", "medium", "short", ["Confident", "Social", "Athletic"], "high", ["families"], "United States"],
-  ["Singapura", "small", "short", ["Curious", "Lively", "Affectionate"], "high", ["apartments"], "Singapore"],
-  ["Somali", "medium", "long", ["Playful", "Curious", "Affectionate"], "high", ["families"], "United States"],
-  ["Balinese", "medium", "long", ["Vocal", "Social", "Graceful"], "high", ["families"], "United States"],
-  ["Javanese", "medium", "long", ["Talkative", "Playful", "Devoted"], "high", ["families"], "United States"],
-  ["Ragamuffin", "large", "long", ["Docile", "Affectionate", "Playful"], "low", ["families", "kids"], "United States"],
-  ["Nebelung", "medium", "long", ["Gentle", "Quiet", "Devoted"], "moderate", ["calm homes"], "United States"],
-  ["Japanese Bobtail", "medium", "short", ["Active", "Talkative", "Playful"], "high", ["families"], "Japan"],
-  ["Korat", "medium", "short", ["Gentle", "Quiet", "Loyal"], "moderate", ["calm homes"], "Thailand"],
-  ["LaPerm", "medium", "curly", ["Affectionate", "Active", "Curious"], "moderate", ["families"], "United States"],
-  ["Selkirk Rex", "medium", "curly", ["Patient", "Playful", "Social"], "moderate", ["families"], "United States"],
-  ["American Wirehair", "medium", "wire", ["Easygoing", "Curious", "Affectionate"], "moderate", ["families"], "United States"],
-  ["Colorpoint Shorthair", "medium", "short", ["Vocal", "Affectionate", "Active"], "high", ["families"], "United States"],
-  ["Snowshoe", "medium", "short", ["Social", "Vocal", "Intelligent"], "moderate", ["families"], "United States"],
-  ["Munchkin", "small", "short", ["Playful", "Outgoing", "Curious"], "moderate", ["apartments", "families"], "United States"],
-  ["Pixiebob", "large", "short", ["Dog-like", "Loyal", "Quiet"], "moderate", ["families"], "United States"],
-  ["Toyger", "medium", "short", ["Outgoing", "Confident", "Athletic"], "moderate", ["families"], "United States"],
-  ["Lykoi", "medium", "partial", ["Curious", "Active", "Affectionate"], "moderate", ["experienced homes"], "United States"],
-  ["Highlander", "large", "short", ["Playful", "Loyal", "Adventurous"], "high", ["families"], "United States"],
-  ["Chantilly-Tiffany", "medium", "long", ["Loyal", "Quiet", "Affectionate"], "low", ["calm homes"], "United States"],
-  ["Havana Brown", "medium", "short", ["Friendly", "Curious", "People-oriented"], "moderate", ["families"], "United Kingdom"],
-  ["Burmilla", "medium", "short", ["Easygoing", "Playful", "Affectionate"], "moderate", ["families"], "United Kingdom"],
-  ["Australian Mist", "medium", "short", ["Gentle", "Social", "Tolerant"], "moderate", ["kids", "families"], "Australia"],
-  ["Asian", "medium", "short", ["Active", "Affectionate", "Curious"], "moderate", ["families"], "United Kingdom"],
-  ["European Shorthair", "medium", "short", ["Independent", "Friendly", "Healthy"], "moderate", ["families"], "Europe"],
-  ["Aegean", "medium", "semi-long", ["Social", "Intelligent", "Active"], "moderate", ["families"], "Greece"],
-  ["Cyprus", "medium", "short", ["Friendly", "Active", "Adaptable"], "moderate", ["families"], "Cyprus"],
-  ["Khao Manee", "medium", "short", ["Active", "Vocal", "Affectionate"], "high", ["families"], "Thailand"],
-  ["Sokoke", "medium", "short", ["Active", "Loyal", "Independent"], "high", ["active homes"], "Kenya"],
-  ["Donskoy", "medium", "hairless", ["Social", "Intelligent", "Affectionate"], "moderate", ["families"], "Russia"],
-  ["Peterbald", "medium", "hairless", ["Affectionate", "Energetic", "Social"], "high", ["families"], "Russia"],
-  ["Kurilian Bobtail", "medium", "short", ["Playful", "Friendly", "Curious"], "moderate", ["families"], "Russia"],
-];
-
-const catSeen = new Set();
-const cats = [];
-for (const row of catRaw) {
-  const [name, sizeGroup, coat, temperament, energy, goodWith, origin] = row;
-  const slug = slugify(name);
-  if (catSeen.has(slug)) continue;
-  catSeen.add(slug);
-  cats.push({
-    slug,
-    name,
-    species: "cat",
-    sizeGroup,
-    coat,
-    temperament,
-    energy,
-    goodWith,
-    description: blurb("cat", name, temperament, sizeGroup, energy, origin),
-    origin: origin || undefined,
-    careNotes: careNotes("cat", coat, energy),
-  });
-}
-
-// --- Rabbits (small set) ---
-const rabbitRaw = [
-  ["Holland Lop", "small", "short", ["Gentle", "Friendly", "Curious"], "moderate", ["families", "apartments"], "Netherlands"],
-  ["Mini Rex", "small", "short", ["Calm", "Affectionate", "Soft"], "low", ["apartments", "families"], "United States"],
-  ["Netherland Dwarf", "small", "short", ["Spunky", "Curious", "Alert"], "moderate", ["experienced homes"], "Netherlands"],
-  ["Lionhead", "small", "long", ["Friendly", "Playful", "Docile"], "moderate", ["families"], "Belgium"],
-  ["Flemish Giant", "large", "short", ["Gentle", "Docile", "Patient"], "low", ["homes with space"], "Belgium"],
-  ["English Lop", "medium", "short", ["Laid-back", "Affectionate", "Calm"], "low", ["families"], "England"],
-  ["Dutch", "small", "short", ["Curious", "Energetic", "Friendly"], "moderate", ["families"], "Netherlands"],
-  ["Mini Lop", "small", "short", ["Outgoing", "Affectionate", "Playful"], "moderate", ["families"], "United States"],
-];
-
-const rabbits = rabbitRaw.map(([name, sizeGroup, coat, temperament, energy, goodWith, origin]) => ({
-  slug: slugify(name),
-  name,
-  species: "rabbit",
-  sizeGroup,
-  coat,
-  temperament,
-  energy,
-  goodWith,
-  description: blurb("rabbit", name, temperament, sizeGroup, energy, origin),
-  origin,
-  careNotes: careNotes("rabbit", coat, energy),
-}));
-
-// --- Birds (small set) ---
-const birdRaw = [
-  ["Budgerigar", "small", "short", ["Social", "Vocal", "Playful"], "high", ["families", "apartments"], "Australia"],
-  ["Cockatiel", "small", "short", ["Gentle", "Affectionate", "Curious"], "moderate", ["families"], "Australia"],
-  ["Lovebird", "small", "short", ["Bonded", "Active", "Curious"], "high", ["experienced homes"], "Africa"],
-  ["Canary", "small", "short", ["Melodic", "Alert", "Independent"], "moderate", ["apartments"], "Canary Islands"],
-  ["Conure", "medium", "short", ["Playful", "Vocal", "Affectionate"], "high", ["experienced homes"], "South America"],
-  ["African Grey Parrot", "medium", "short", ["Intelligent", "Observant", "Social"], "high", ["experienced homes"], "Central Africa"],
-];
-
-const birds = birdRaw.map(([name, sizeGroup, coat, temperament, energy, goodWith, origin]) => ({
-  slug: slugify(name),
-  name,
-  species: "bird",
-  sizeGroup,
-  coat,
-  temperament,
-  energy,
-  goodWith,
-  description: blurb("bird", name, temperament, sizeGroup, energy, origin),
-  origin,
-  careNotes: careNotes("bird", coat, energy),
-}));
-
-const all = [...dogs, ...cats, ...rabbits, ...birds];
+const all = [...dogs];
 
 function serializeBreed(b) {
   const lines = [
@@ -497,7 +341,7 @@ function serializeBreed(b) {
 
 const out = `import type { Breed } from "@/lib/types";
 
-/** Comprehensive static breed encyclopedia for Puppies for Adoption (dogs, cats, and a few small pets). */
+/** Comprehensive static breed encyclopedia for Puppies for Adoption (dogs only). */
 export const breeds: Breed[] = [
 ${all.map(serializeBreed).join(",\n")},
 ];
@@ -533,9 +377,6 @@ export function breedSlugFromPetBreed(petBreed: string): string | undefined {
 
 export const breedCounts = {
   dog: breeds.filter((b) => b.species === "dog").length,
-  cat: breeds.filter((b) => b.species === "cat").length,
-  rabbit: breeds.filter((b) => b.species === "rabbit").length,
-  bird: breeds.filter((b) => b.species === "bird").length,
   total: breeds.length,
 } as const;
 `;
@@ -545,8 +386,5 @@ writeFileSync(dest, out);
 console.log("Wrote", dest);
 console.log("Counts:", {
   dog: dogs.length,
-  cat: cats.length,
-  rabbit: rabbits.length,
-  bird: birds.length,
   total: all.length,
 });

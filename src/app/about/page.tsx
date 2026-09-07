@@ -21,9 +21,9 @@ export default function AboutPage() {
           to land, and every person deserves a clear, kind path to adoption.
         </p>
         <p>
-          We bring adoptable dogs, cats, rabbits, and birds into one calm,
-          beautiful space — so you can browse thoughtfully, learn about each
-          animal, and apply when you feel ready.
+          We bring adoptable dogs and puppies into one calm, beautiful space —
+          so you can browse thoughtfully, learn about each animal, and apply
+          when you feel ready.
         </p>
         <p>
           This v1 site is a front-end experience with realistic sample pets. In

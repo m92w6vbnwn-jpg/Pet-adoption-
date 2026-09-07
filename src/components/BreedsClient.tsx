@@ -7,9 +7,6 @@ import BreedCard from "@/components/BreedCard";
 const speciesTabs: { value: Species | "all"; label: string }[] = [
   { value: "all", label: "All" },
   { value: "dog", label: "Dogs" },
-  { value: "cat", label: "Cats" },
-  { value: "rabbit", label: "Rabbits" },
-  { value: "bird", label: "Birds" },
 ];
 
 export default function BreedsClient({ breeds }: { breeds: Breed[] }) {

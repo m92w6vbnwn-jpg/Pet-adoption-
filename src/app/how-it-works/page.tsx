@@ -10,7 +10,7 @@ const steps = [
   {
     n: "01",
     title: "Browse & filter",
-    body: "Explore adoptable pets and narrow by species, age, and size until someone feels like a fit.",
+    body: "Explore adoptable dogs and narrow by age and size until someone feels like a fit.",
   },
   {
     n: "02",

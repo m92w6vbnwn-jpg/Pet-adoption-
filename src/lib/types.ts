@@ -1,4 +1,4 @@
-export type Species = "dog" | "cat" | "rabbit" | "bird";
+export type Species = "dog";
 export type Size = "small" | "medium" | "large";
 export type AgeGroup = "puppy" | "young" | "adult" | "senior";
 

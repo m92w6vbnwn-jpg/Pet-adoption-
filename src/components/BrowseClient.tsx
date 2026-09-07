@@ -5,11 +5,8 @@ import type { AgeGroup, Pet, Size, Species } from "@/lib/types";
 import PetCard from "@/components/PetCard";
 
 const speciesOptions: { value: Species | "all"; label: string }[] = [
-  { value: "all", label: "All species" },
+  { value: "all", label: "All dogs" },
   { value: "dog", label: "Dogs" },
-  { value: "cat", label: "Cats" },
-  { value: "rabbit", label: "Rabbits" },
-  { value: "bird", label: "Birds" },
 ];
 
 const sizeOptions: { value: Size | "all"; label: string }[] = [
@@ -21,7 +18,7 @@ const sizeOptions: { value: Size | "all"; label: string }[] = [
 
 const ageOptions: { value: AgeGroup | "all"; label: string }[] = [
   { value: "all", label: "All ages" },
-  { value: "puppy", label: "Puppy / Kitten" },
+  { value: "puppy", label: "Puppy" },
   { value: "young", label: "Young" },
   { value: "adult", label: "Adult" },
   { value: "senior", label: "Senior" },

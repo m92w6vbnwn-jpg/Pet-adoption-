@@ -21,10 +21,10 @@ Then open http://localhost:3000
 ## What is included
 
 - Home with featured pets
-- Browse with search and filters (species, age, size)
+- Browse with search and filters (age, size)
 - Pet detail pages with adoption application form
 - About, How adoption works, and Contact pages
-- 12 sample pets with Unsplash images (no backend)
+- 5 sample dogs with Unsplash images (no backend)
 
 ## Stack
 

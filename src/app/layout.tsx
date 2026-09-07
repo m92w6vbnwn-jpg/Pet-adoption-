@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     template: "%s · Puppies for Adoption",
   },
   description:
-    "Puppies for Adoption helps people find forever friends. Browse dogs, cats, rabbits, and birds looking for loving homes.",
+    "Puppies for Adoption helps people find forever friends. Browse dogs and puppies looking for loving homes.",
   openGraph: {
     title: "Puppies for Adoption — Find your forever friend",
     description:
-      "Puppies for Adoption helps people find forever friends. Browse dogs, cats, rabbits, and birds looking for loving homes.",
+      "Puppies for Adoption helps people find forever friends. Browse dogs and puppies looking for loving homes.",
     type: "website",
     siteName: "Puppies for Adoption",
   },

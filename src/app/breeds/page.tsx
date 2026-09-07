@@ -5,7 +5,7 @@ import { breedCounts, breeds } from "@/data/breeds";
 export const metadata: Metadata = {
   title: "Breed encyclopedia",
   description:
-    "Explore dog, cat, rabbit, and bird breeds — temperament, energy, coat, and care notes from Puppies for Adoption.",
+    "Explore dog breeds — temperament, energy, coat, and care notes from Puppies for Adoption.",
 };
 
 export default function BreedsPage() {
@@ -25,26 +25,10 @@ export default function BreedsPage() {
         </p>
         <dl className="mt-6 flex flex-wrap gap-4 text-sm">
           <div className="rounded-full bg-cream-100 px-3 py-1.5">
-            <dt className="sr-only">Dogs</dt>
+            <dt className="sr-only">Dog breeds</dt>
             <dd>
               <span className="font-semibold text-ink-900">{breedCounts.dog}</span>{" "}
-              <span className="text-ink-700">dogs</span>
-            </dd>
-          </div>
-          <div className="rounded-full bg-cream-100 px-3 py-1.5">
-            <dt className="sr-only">Cats</dt>
-            <dd>
-              <span className="font-semibold text-ink-900">{breedCounts.cat}</span>{" "}
-              <span className="text-ink-700">cats</span>
-            </dd>
-          </div>
-          <div className="rounded-full bg-cream-100 px-3 py-1.5">
-            <dt className="sr-only">Small pets</dt>
-            <dd>
-              <span className="font-semibold text-ink-900">
-                {breedCounts.rabbit + breedCounts.bird}
-              </span>{" "}
-              <span className="text-ink-700">small pets</span>
+              <span className="text-ink-700">dog breeds</span>
             </dd>
           </div>
         </dl>

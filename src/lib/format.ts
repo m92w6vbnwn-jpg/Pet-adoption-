@@ -10,7 +10,7 @@ export function formatSize(size: Size): string {
 
 export function formatAgeGroup(ageGroup: AgeGroup): string {
   const labels: Record<AgeGroup, string> = {
-    puppy: "Puppy / Kitten",
+    puppy: "Puppy",
     young: "Young",
     adult: "Adult",
     senior: "Senior",

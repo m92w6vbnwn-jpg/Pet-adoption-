@@ -5,7 +5,7 @@ import { pets } from "@/data/pets";
 
 export const metadata: Metadata = {
   title: "Browse pets",
-  description: "Search and filter adoptable dogs, cats, rabbits, and birds on Puppies for Adoption.",
+  description: "Search and filter adoptable dogs and puppies on Puppies for Adoption.",
 };
 
 export default function BrowsePage() {
@@ -20,7 +20,7 @@ export default function BrowsePage() {
           Browse pets
         </h1>
         <p className="mt-3 text-lg text-ink-700">
-          Search by name or breed, then filter by species, age, and size to find
+          Search by name or breed, then filter by age and size to find
           your match.{" "}
           <Link href="/breeds" className="font-semibold text-clay-600 hover:text-clay-700">
             Explore the breed encyclopedia
