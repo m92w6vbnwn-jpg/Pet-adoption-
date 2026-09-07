@@ -47,7 +47,7 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-cream-200">
             Get in touch
           </h2>
-          <p className="mt-3 text-sm text-cream-300">hello@puppiesforadoption.example</p>
+          <p className="mt-3 text-sm text-cream-300"><a className="hover:text-white" href="mailto:michealgoege4@gmail.com">michealgoege4@gmail.com</a></p>
           <p className="mt-1 text-sm text-cream-300">California, United States</p>
         </div>
       </div>

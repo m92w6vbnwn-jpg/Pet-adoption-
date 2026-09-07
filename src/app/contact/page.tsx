@@ -23,7 +23,7 @@ export default function ContactPage() {
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">
                 Email
               </dt>
-              <dd className="mt-1">hello@puppiesforadoption.example</dd>
+              <dd className="mt-1"><a className="font-medium text-clay-700 hover:text-clay-600" href="mailto:michealgoege4@gmail.com">michealgoege4@gmail.com</a></dd>
             </div>
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-ink-700/70">
