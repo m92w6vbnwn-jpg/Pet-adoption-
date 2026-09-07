@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import type { AgeGroup, Pet, Size, Species } from "@/lib/types";
 import PetCard from "@/components/PetCard";
 
@@ -27,23 +27,46 @@ const ageOptions: { value: AgeGroup | "all"; label: string }[] = [
   { value: "senior", label: "Senior" },
 ];
 
-export default function BrowseClient({ pets }: { pets: Pet[] }) {
+function readBreedParam(): string {
+  if (typeof window === "undefined") return "";
+  try {
+    return new URLSearchParams(window.location.search).get("breed") ?? "";
+  } catch {
+    return "";
+  }
+}
+
+export default function BrowseClient({
+  pets,
+  breedOptions,
+}: {
+  pets: Pet[];
+  breedOptions: string[];
+}) {
   const [query, setQuery] = useState("");
   const [species, setSpecies] = useState<Species | "all">("all");
   const [size, setSize] = useState<Size | "all">("all");
   const [age, setAge] = useState<AgeGroup | "all">("all");
+  const [breed, setBreed] = useState("");
+
+  useEffect(() => {
+    const fromUrl = readBreedParam();
+    if (fromUrl) setBreed(fromUrl);
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const breedQ = breed.trim().toLowerCase();
     return pets.filter((pet) => {
       if (species !== "all" && pet.species !== species) return false;
       if (size !== "all" && pet.size !== size) return false;
       if (age !== "all" && pet.ageGroup !== age) return false;
+      if (breedQ && !pet.breed.toLowerCase().includes(breedQ)) return false;
       if (!q) return true;
       const hay = `${pet.name} ${pet.breed} ${pet.bio} ${pet.location} ${pet.traits.join(" ")}`.toLowerCase();
       return hay.includes(q);
     });
-  }, [pets, query, species, size, age]);
+  }, [pets, query, species, size, age, breed]);
 
   return (
     <div>
@@ -59,7 +82,7 @@ export default function BrowseClient({ pets }: { pets: Pet[] }) {
           onChange={(e) => setQuery(e.target.value)}
           className="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-3 text-ink-900 outline-none ring-clay-500/40 placeholder:text-ink-700/50 focus:ring-2"
         />
-        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <label htmlFor="filter-species" className="mb-1 block text-xs font-semibold uppercase tracking-wide text-ink-700">
               Species
@@ -73,6 +96,24 @@ export default function BrowseClient({ pets }: { pets: Pet[] }) {
               {speciesOptions.map((o) => (
                 <option key={o.value} value={o.value}>
                   {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="filter-breed" className="mb-1 block text-xs font-semibold uppercase tracking-wide text-ink-700">
+              Breed
+            </label>
+            <select
+              id="filter-breed"
+              value={breed}
+              onChange={(e) => setBreed(e.target.value)}
+              className="w-full rounded-xl border border-cream-300 bg-cream-50 px-3 py-2.5 text-sm text-ink-900 outline-none focus:ring-2 focus:ring-clay-500/40"
+            >
+              <option value="">All breeds</option>
+              {breedOptions.map((name) => (
+                <option key={name} value={name}>
+                  {name}
                 </option>
               ))}
             </select>
@@ -131,6 +172,7 @@ export default function BrowseClient({ pets }: { pets: Pet[] }) {
               setSpecies("all");
               setSize("all");
               setAge("all");
+              setBreed("");
             }}
             className="mt-4 rounded-full bg-clay-600 px-4 py-2 text-sm font-semibold text-white hover:bg-clay-700"
           >

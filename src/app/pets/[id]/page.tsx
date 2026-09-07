@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import AdoptionForm from "@/components/AdoptionForm";
+import { getBreedBySlug } from "@/data/breeds";
 import { getPetById, pets } from "@/data/pets";
 import { formatAge, formatAgeGroup, formatSize, formatSpecies } from "@/lib/format";
 
@@ -55,8 +56,17 @@ export default async function PetDetailPage({ params }: Props) {
             {pet.name}
           </h1>
           <p className="mt-2 text-lg text-ink-700">
-            {pet.breed} · {formatAge(pet.ageYears)} ·{" "}
-            {formatSize(pet.size)}
+            {pet.breedSlug && getBreedBySlug(pet.breedSlug) ? (
+              <Link
+                href={`/breeds/${pet.breedSlug}`}
+                className="font-medium text-clay-600 hover:text-clay-700"
+              >
+                {pet.breed}
+              </Link>
+            ) : (
+              pet.breed
+            )}{" "}
+            · {formatAge(pet.ageYears)} · {formatSize(pet.size)}
           </p>
           <p className="mt-1 text-sm text-ink-700/80">{pet.location}</p>
 

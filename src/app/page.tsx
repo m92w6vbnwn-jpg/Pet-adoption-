@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import PetCard from "@/components/PetCard";
+import { breedCounts } from "@/data/breeds";
 import { getFeaturedPets } from "@/data/pets";
 
 export default function HomePage() {
@@ -80,6 +81,30 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+        <div className="overflow-hidden rounded-3xl border border-cream-300 bg-gradient-to-br from-sage-500/15 via-cream-50 to-clay-400/10 p-6 sm:p-8 md:flex md:items-center md:justify-between md:gap-8">
+          <div className="max-w-xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-sage-700">
+              New on Øf
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">
+              Breed encyclopedia
+            </h2>
+            <p className="mt-3 text-ink-700 leading-relaxed">
+              Explore {breedCounts.dog}+ dog breeds and {breedCounts.cat}+ cat
+              breeds — plus a handful of rabbit and bird profiles — with
+              temperament tags, energy levels, and practical care notes.
+            </p>
+          </div>
+          <Link
+            href="/breeds"
+            className="mt-6 inline-flex shrink-0 rounded-full bg-clay-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-clay-700 md:mt-0"
+          >
+            Browse breeds
+          </Link>
         </div>
       </section>
 
