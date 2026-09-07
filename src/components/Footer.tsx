@@ -22,6 +22,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/apply" className="hover:text-white">
+                Apply to adopt
+              </Link>
+            </li>
+            <li>
               <Link href="/breeds" className="hover:text-white">
                 Breed encyclopedia
               </Link>
