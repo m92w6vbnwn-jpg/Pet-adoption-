@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LiveChat from "@/components/LiveChat";
 import "./globals.css";
 
 const display = Fraunces({
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <LiveChat />
       </body>
     </html>
   );
